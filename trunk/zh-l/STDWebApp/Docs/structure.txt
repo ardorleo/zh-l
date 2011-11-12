@@ -1,0 +1,25 @@
+==架构选型==
+
+===主体===
+
+Spring 3.0.5
+
+IBatis 2.3.4.726
+
+Freemarker
+
+JQuery 1.6.4
+
+Log4j
+
+PostgreSQL/Oracle
+
+===内置===
+
+JSTL
+
+Servlet
+
+JSP
+
+jackson(Spring)

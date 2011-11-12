@@ -1,0 +1,9 @@
+						<h:outputText value="#{bundle.NAME}" />
+						<h:inputText label="#{bundle.NAME}" id="NAME" required="true"
+							validator="#{extAgentinfoAction.validate}" style="width:160px;"
+							value="#{extAgentinfoAction.newItem.name}" maxlength="20" />
+						<rich:message for="NAME" showDetail="false">
+							<f:facet name="errorMarker">
+								<h:graphicImage value="/jsf/images/error.gif" />
+							</f:facet>
+						</rich:message>
