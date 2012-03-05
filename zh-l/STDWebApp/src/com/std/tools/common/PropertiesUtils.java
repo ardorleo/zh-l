@@ -29,7 +29,8 @@ public class PropertiesUtils {
 	}
 
 	/**
-	 * 获取参数对象 配置文件，需要有完整的相对路径，相对于class的根路径
+	 * 获取参数对象 配置文件，需要有完整的相对路径，相对于class的根路径<br>
+	 * 例如：com/std/tools/gen/profiles/Datashare2Gen.properties
 	 *
 	 * @return
 	 * @throws IOException
