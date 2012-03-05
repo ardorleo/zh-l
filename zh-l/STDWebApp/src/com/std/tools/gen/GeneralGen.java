@@ -74,11 +74,9 @@ public class GeneralGen {
                                                                                                 TemplateException {
         Configuration cfg = new Configuration();
         if (subPath != null && !subPath.isEmpty()) {
-            cfg.setDirectoryForTemplateLoading(new File(DataShare2Gen.class.getClassLoader()
-                .getResource(PATH_TEMPLATE + "/" + subPath).getFile()));
+            cfg.setDirectoryForTemplateLoading(new File(GeneralGen.class.getClassLoader().getResource(PATH_TEMPLATE + "/" + subPath).getFile()));
         } else {
-            cfg.setDirectoryForTemplateLoading(new File(DataShare2Gen.class.getClassLoader()
-                .getResource(PATH_TEMPLATE).getFile()));
+            cfg.setDirectoryForTemplateLoading(new File(GeneralGen.class.getClassLoader().getResource(PATH_TEMPLATE).getFile()));
         }
         cfg.setEncoding(Locale.CHINA, "utf-8");
         cfg.setSharedVariable("toCmael", new FromUnderscoreToCamel());
