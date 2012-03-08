@@ -6,6 +6,7 @@
 
 	<resultMap id="${dataObject?uncap_first}ResultView"  class="${dataObject?uncap_first}">
 	<#list fieldColMap?keys as field>
+		<!-- ${fieldCommentMap[field]} -->
 		<result property="${field}"	column="${fieldColMap[field]}"/>
 	</#list>
 	</resultMap>
@@ -30,7 +31,7 @@
 	</update>
 
 	<!--查找所有的${dataObject} -->
-	<select id="getAll${dataObject}" resultMap="${dataObject?uncap_first}ResultView">
+	<select id="selectAll${dataObject}" resultMap="${dataObject?uncap_first}ResultView">
 		select
 			<#list fieldColMap?keys as field>
 			a.${fieldColMap[field]}<#if field_has_next>,</#if>
@@ -39,7 +40,7 @@
 	</select>
 
 	<!--查找部分的${dataObject} -->
-	<select id="getPart${dataObject}" resultMap="${dataObject?uncap_first}ResultView" parameterClass="java.util.List">
+	<select id="select${dataObject}ByIds" resultMap="${dataObject?uncap_first}ResultView" parameterClass="java.util.List">
 		select
 			<#list fieldColMap?keys as field>
 			a.${fieldColMap[field]}<#if field_has_next>,</#if>
@@ -52,7 +53,7 @@
 	</select>
 
 	<!--根据条件查找${dataObject} -->
-	<select id="get${dataObject}" resultMap="${dataObject?uncap_first}ResultView" parameterClass="java.lang.Integer">
+	<select id="select${dataObject}ById" resultMap="${dataObject?uncap_first}ResultView" parameterClass="java.lang.Integer">
 		select
 			<#list fieldColMap?keys as field>
 			a.${fieldColMap[field]}<#if field_has_next>,</#if>

@@ -4,6 +4,10 @@
  */
 package ${servicePackage};
 
+import java.util.List;
+import org.springframework.dao.DataAccessException;
+import ${dataObjectPackage}.${dataObject};
+
 
 /**
  * 

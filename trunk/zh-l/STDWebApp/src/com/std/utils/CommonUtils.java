@@ -22,8 +22,10 @@ public class CommonUtils {
      * 格式例如:2012
      * @return
      */
-    public static int getNowYear() {
-        return nowCalendar.get(Calendar.YEAR);
+    public static String getNowYear() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy", Locale.CHINA);
+        dateFormat.setCalendar(nowCalendar);
+        return dateFormat.format(nowCalendar.getTime());
     }
 
     /**

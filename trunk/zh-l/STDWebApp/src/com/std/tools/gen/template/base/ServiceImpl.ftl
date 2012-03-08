@@ -4,6 +4,12 @@
  */
 package ${servicePackage}.impl;
 
+import java.util.List;
+import org.springframework.dao.DataAccessException;
+import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
+import ${dataObjectPackage}.${dataObject};
+import ${daoPackage}.${dataDao};
+import ${servicePackage}.${service};
 
 /**
  * 

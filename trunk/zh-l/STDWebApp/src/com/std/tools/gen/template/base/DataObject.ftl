@@ -16,7 +16,7 @@ public class ${dataObject} implements Serializable {
 <#list fieldsNameList as fieldName>
 	<#list fieldTypeMap?keys as keyName>
 		<#if keyName==fieldName>
-	/**  */
+	/** ${fieldCommentMap[fieldName]} */
 	private ${fieldTypeMap[keyName]} ${fieldName};
 		</#if>
 	</#list>
@@ -25,14 +25,14 @@ public class ${dataObject} implements Serializable {
 	<#list fieldTypeMap?keys as keyName>
 		<#if keyName==fieldName>
 	/**
-	 * 设置${fieldName}的值
+	 * 设置  ${fieldCommentMap[fieldName]} 的值
 	 * @return
 	 */
 	public void set${fieldName?cap_first}(${fieldTypeMap[keyName]} ${fieldName}){
 	  this.${fieldName} = ${fieldName};
 	}
 	/**
-	 * 返回${fieldName}的值
+	 * 返回  ${fieldCommentMap[fieldName]} 的值
 	 * @return
 	 */
 	public ${fieldTypeMap[keyName]} get${fieldName?cap_first}(){
