@@ -19,6 +19,7 @@ public interface ITemplateData {
 	public static final String COL_FIELD_MAP = "colFieldMap";
 	public static final String FIELD_COL_MAP = "fieldColMap";
 	public static final String FIELD_TYPE_MAP = "fieldTypeMap";
+	public static final String FIELD_COMMENT_MAP = "fieldCommentMap";
 
 	/** like FIELDS_NAME_LIST*/
 	@Deprecated
@@ -44,7 +45,7 @@ public interface ITemplateData {
 
 	public String getDAOPackage();
 
-	public int getNowYear();
+	public String getNowYear();
 
 	public String getNowDayTime();
 
@@ -65,5 +66,7 @@ public interface ITemplateData {
 	public Map<String, String> getFieldColMap();
 
 	public Map<String,String> getFieldTypeMap();
+	
+	public Map<String,String> getFieldCommentMap();
 
 }

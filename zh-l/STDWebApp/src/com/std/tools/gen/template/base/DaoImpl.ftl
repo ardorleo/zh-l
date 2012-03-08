@@ -4,6 +4,11 @@
  */
 package ${daoPackage}.impl;
 
+import java.util.List;
+import org.springframework.dao.DataAccessException;
+import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
+import ${dataObjectPackage}.${dataObject};
+import ${daoPackage}.${dataDao};
 
 /**
  * 
@@ -48,9 +53,10 @@ public class ${dataDao}Impl  extends SqlMapClientDaoSupport implements ${dataDao
 	 * @return List
 	 * @throws DataAccessException
 	 */
+	@SuppressWarnings("unchecked")
 	public List<${dataObject}> selectAll${dataObject}() throws DataAccessException{
 	    try {
-	        return this.getSqlMapClientTemplate().queryForList("${dataObject}.getAll${dataObject}");
+	        return this.getSqlMapClientTemplate().queryForList("${dataObject}.selectAll${dataObject}");
 	    } catch (DataAccessException ex) {
 	        logger.error("获取所有${dataObject}时出错", ex);
 	        throw ex;
@@ -65,7 +71,7 @@ public class ${dataDao}Impl  extends SqlMapClientDaoSupport implements ${dataDao
 	public ${dataObject} select${dataObject}ById(int ${dataObject?uncap_first}Id) throws DataAccessException{
 	    try {
 	        return (${dataObject}) this.getSqlMapClientTemplate()
-	        .queryForObject("${dataObject}.get${dataObject}", ${dataObject?uncap_first}Id);
+	        .queryForObject("${dataObject}.select${dataObject}ById", ${dataObject?uncap_first}Id);
 	    } catch (DataAccessException ex) {
 	        logger.error("获取${dataObject}时出错", ex);
 	        throw ex;
@@ -77,9 +83,10 @@ public class ${dataDao}Impl  extends SqlMapClientDaoSupport implements ${dataDao
 	 * @return List
 	 * @throws DataAccessException
 	 */
+	@SuppressWarnings("unchecked")
 	public List<${dataObject}> select${dataObject}ByIds(List<Integer> ${dataObject?uncap_first}Ids) throws DataAccessException{
 	    try {
-	        return this.getSqlMapClientTemplate().queryForList("${dataObject}.getPart${dataObject}", ${dataObject?uncap_first}Ids);
+	        return this.getSqlMapClientTemplate().queryForList("${dataObject}.select${dataObject}ByIds", ${dataObject?uncap_first}Ids);
 	    } catch (DataAccessException ex) {
 	        logger.error("获取部分${dataObject}时出错", ex);
 	        throw ex;

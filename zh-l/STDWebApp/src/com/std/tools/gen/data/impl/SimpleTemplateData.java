@@ -14,6 +14,7 @@ public class SimpleTemplateData extends AbstractTemplateData {
 
 	public static final String TABLE_COLS="table.cols";
 	public static final String COLS_TYPE="cols.type";
+	public static final String COLS_COMMENT="cols.comment";
 
 	public static final String AUTHOR="author";
 
@@ -24,7 +25,7 @@ public class SimpleTemplateData extends AbstractTemplateData {
 	public static final String DATA_OBJECT_PACKAGE="data.object.package";
 	public static final String DAO_PACKAGE="dao.package";
 	public static final String SERVICE_PACKAGE="service.package";
-
+   
 	private PropertiesUtils propsUtil;
 
 	private List <String> tableColList=new ArrayList<String>();
@@ -32,6 +33,7 @@ public class SimpleTemplateData extends AbstractTemplateData {
 	private Map <String,String> colFieldMap=new HashMap<String,String>();
 	private Map <String,String> fieldColMap=new HashMap<String,String>();
 	private Map <String,String> fieldTypeMap=new HashMap<String,String>();
+	private Map<String, String> fieldCommentMap = new HashMap<String,String>();
 
 	public SimpleTemplateData(String configProps) throws IOException{
 		if(configProps==null || configProps.equals("")) throw new RuntimeException("参数不能为空");
@@ -55,6 +57,14 @@ public class SimpleTemplateData extends AbstractTemplateData {
 		for (int i = 0; i < nameArray.length; i++) {
 		    fieldTypeMap.put(fieldNameLst.get(i), colTypeArray[i]);
 		}
+		
+        String colsCommentStr=this.propsUtil.getValue(COLS_COMMENT);
+        if(colsCommentStr!=null && !colsCommentStr.equals("")){
+            String colsCommentArray[] =colsCommentStr.split(",");
+            for (int i = 0; i < nameArray.length; i++) {
+                fieldCommentMap.put(fieldNameLst.get(i), colsCommentArray[i]);
+            }
+        }
 	}
 
 	@Override
@@ -116,5 +126,10 @@ public class SimpleTemplateData extends AbstractTemplateData {
 	public Map<String, String> getFieldTypeMap() {
 		return this.fieldTypeMap;
 	}
+
+    @Override
+    public Map<String, String> getFieldCommentMap() {
+        return this.fieldCommentMap;
+    }
 
 }
