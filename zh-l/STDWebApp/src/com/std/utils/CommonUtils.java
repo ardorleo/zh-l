@@ -127,10 +127,10 @@ public class CommonUtils {
     }
 
     public static void main(String[] args) {
-    	String tempStr="servicePackage,dataObjectPackage,author,nowYear,nowDayTime,service,dataDao,dataObject,tableColList,obFeildList,colFieldMap,fieldColMap";
-    	String tempStrArray[]=tempStr.split(",");
-    	for (int i = 0; i < tempStrArray.length; i++) {
-			System.out.println(fromCamelToUnderscore(tempStrArray[i]).toUpperCase());
-		}
+        String tempStr="servicePackage,dataObjectPackage,author,nowYear,nowDayTime,service,dataDao,dataObject,tableColList,obFeildList,colFieldMap,fieldColMap";
+        String tempStrArray[]=tempStr.split(",");
+        for (int i = 0; i < tempStrArray.length; i++) {
+            System.out.println(fromCamelToUnderscore(tempStrArray[i]).toUpperCase());
+        }
     }
 }
