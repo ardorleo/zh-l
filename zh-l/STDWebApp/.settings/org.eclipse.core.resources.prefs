@@ -1,4 +1,2 @@
-#Sat Nov 12 13:28:12 CST 2011
 eclipse.preferences.version=1
-encoding//src/com/std/tools/common/PropertiesUtils.java=UTF-8
-encoding//src/com/std/tools/gen/template/etl_1_addPanel.ftl=UTF-8
+encoding//src/com/std/tools/gen/Etl2Gen.java=GBK
