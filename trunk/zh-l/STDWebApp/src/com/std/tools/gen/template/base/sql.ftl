@@ -36,7 +36,7 @@
 			<#list fieldColMap?keys as field>
 			a.${fieldColMap[field]}<#if field_has_next>,</#if>
 			</#list>
-		  from ${toUnderscore(dataObject)?upper_case} A left join ${toUnderscore(dataObject)?upper_case} B on A.id = B.id
+		  from ${toUnderscore(dataObject)?upper_case} A 
 	</select>
 
 	<!--查找部分的${dataObject} -->
