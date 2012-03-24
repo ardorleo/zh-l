@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import com.std.tools.gen.data.impl.SimpleTemplateData;
 
-import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
 
 public class DataShare2Gen {
@@ -16,12 +15,11 @@ public class DataShare2Gen {
 		/*VaryObject*/
 //	    testGen=new GeneralGen(new SimpleTemplateData("com/std/tools/gen/profiles/Datashare/VaryObject.properties"));
 		/*VaryExtend*/
-      testGen=new GeneralGen(new SimpleTemplateData("com/std/tools/gen/profiles/Datashare/VaryExtend.properties"));
+//      testGen=new GeneralGen(new SimpleTemplateData("com/std/tools/gen/profiles/Datashare/VaryExtend.properties"));
 	    /*VaryExtendValue*/
 //      testGen=new GeneralGen(new SimpleTemplateData("com/std/tools/gen/profiles/Datashare/VaryExtendValue.properties"));
+	    /*VaryTaskLog*/
+	    testGen=new GeneralGen(new SimpleTemplateData("com/std/tools/gen/profiles/Datashare/VaryTaskLog.properties"));	    
 		testGen.systemOutAll();
-
-
-
 	}
 }

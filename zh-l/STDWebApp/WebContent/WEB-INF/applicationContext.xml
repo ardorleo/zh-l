@@ -75,4 +75,29 @@
 		<property name="dataSource" ref="oracleDataSource" />
 		<property name="configLocation" value="WEB-INF/contextSqlMapConfig.xml" />
 	</bean>
+	<bean id="sqlExecutor" class="org.apache.ibatis.ext.executor.XSqlExecutor">
+		<property name="dialect">
+			<!-- sqlserver2005 -->
+			<!-- <bean class="com.alipay.common.dialect.impl.SQLServer2005Dialect"/> -->
+			<!-- mysql -->
+			<!-- <bean class="com.alipay.common.dialect.impl.MySQLDialect" /> -->
+			<!--oracle -->
+			<bean class="org.apache.ibatis.ext.dialect.impl.OracleDialect" />
+		</property>
+		<property name="enableLimit">
+			<value>true</value>
+		</property>
+	</bean>
+
+	<bean id="baseDao" abstract="true" class="com.alipay.etl2.dao.impl.BaseDao" init-method="initialize">
+		<property name="dataSource">
+			<ref bean="oracleDataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+		<property name="sqlExecutor">
+			<ref bean="sqlExecutor" />
+		</property>
+	</bean>		
 </beans>
