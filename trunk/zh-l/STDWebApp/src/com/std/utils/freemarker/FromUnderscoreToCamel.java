@@ -18,7 +18,7 @@ import freemarker.template.TemplateModelException;
  */
 public class FromUnderscoreToCamel implements TemplateMethodModel{
 
-    @Override
+    @SuppressWarnings("rawtypes")
     public Object exec(List args) throws TemplateModelException {
         return CommonUtils.fromUnderscoreToCamel((String)args.get(0));
     }

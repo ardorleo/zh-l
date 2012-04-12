@@ -7,12 +7,10 @@ import com.std.utils.CommonUtils;
 
 public abstract class AbstractTemplateData implements ITemplateData {
 
-	@Override
 	public String getNowYear() {
 		return CommonUtils.getNowYear();
 	}
 
-	@Override
 	public String getNowDayTime() {
 		return CommonUtils.getNowDayTime();
 	}

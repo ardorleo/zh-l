@@ -67,67 +67,55 @@ public class SimpleTemplateData extends AbstractTemplateData {
         }
 	}
 
-	@Override
+
 	public String getServicePackage() {
 		return this.propsUtil.getValue(SERVICE_PACKAGE);
 	}
 
-	@Override
 	public String getDataObjectPackage() {
 		return this.propsUtil.getValue(DATA_OBJECT_PACKAGE);
 	}
 
-	@Override
 	public String getDAOPackage() {
 		return this.propsUtil.getValue(DAO_PACKAGE);
 	}
 
-	@Override
 	public String getAuthor() {
 		return this.propsUtil.getValue(AUTHOR);
 	}
 
-	@Override
 	public String getDataObjectName() {
 		return this.propsUtil.getValue(DATA_OBJECT_NAME);
 	}
 
-	@Override
 	public String getDAOName() {
 		return this.propsUtil.getValue(DAO_NAME);
 	}
 
-	@Override
 	public String getServiceName() {
 		return this.propsUtil.getValue(SERVICE_NAME);
 	}
 
-	@Override
 	public List<String> getTableColsNameList() {
 		return this.tableColList;
 	}
 
-	@Override
 	public List<String> getFieldsNameList() {
 		return this.fieldNameLst;
 	}
 
-	@Override
 	public Map<String, String> getColFieldMap() {
 		return this.colFieldMap;
 	}
 
-	@Override
 	public Map<String, String> getFieldColMap() {
 		return this.fieldColMap;
 	}
 
-	@Override
 	public Map<String, String> getFieldTypeMap() {
 		return this.fieldTypeMap;
 	}
 
-    @Override
     public Map<String, String> getFieldCommentMap() {
         return this.fieldCommentMap;
     }

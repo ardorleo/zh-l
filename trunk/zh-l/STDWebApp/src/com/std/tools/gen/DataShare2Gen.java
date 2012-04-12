@@ -11,7 +11,7 @@ public class DataShare2Gen {
 	    GeneralGen testGen=null;//必须初始化
 	    
 	    /*VaryValue*/
-//		testGen=new GeneralGen(new SimpleTemplateData("com/std/tools/gen/profiles/Datashare/VaryValue.properties"));
+		testGen=new GeneralGen(new SimpleTemplateData("com/std/tools/gen/profiles/Datashare/VaryValue.properties"));
 		/*VaryObject*/
 //	    testGen=new GeneralGen(new SimpleTemplateData("com/std/tools/gen/profiles/Datashare/VaryObject.properties"));
 		/*VaryExtend*/
@@ -19,7 +19,7 @@ public class DataShare2Gen {
 	    /*VaryExtendValue*/
 //      testGen=new GeneralGen(new SimpleTemplateData("com/std/tools/gen/profiles/Datashare/VaryExtendValue.properties"));
 	    /*VaryTaskLog*/
-	    testGen=new GeneralGen(new SimpleTemplateData("com/std/tools/gen/profiles/Datashare/VaryTaskLog.properties"));	    
+//	    testGen=new GeneralGen(new SimpleTemplateData("com/std/tools/gen/profiles/Datashare/VaryTaskLog.properties"));	    
 		testGen.systemOutAll();
 	}
 }
