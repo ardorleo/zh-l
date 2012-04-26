@@ -12,7 +12,7 @@ import java.io.Serializable;
  */
 
 public class ${dataObject} implements Serializable {
-	private static final long serialVersionUID = ;
+	private static final long serialVersionUID = 1L;
 <#list fieldsNameList as fieldName>
 	<#list fieldTypeMap?keys as keyName>
 		<#if keyName==fieldName>
