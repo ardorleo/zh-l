@@ -37,7 +37,7 @@ public boolean update(${dataObject} ${dataObject?uncap_first}) throws DataAccess
  */
 public List<${dataObject}> selectAll${dataObject}() throws DataAccessException;
 /**
- * 根据varyId查询出${dataObject}信息
+ * 根据${dataObject?uncap_first}Id查询出${dataObject}信息
  * @param  ${dataObject?uncap_first}Id  
  * @return ${dataObject}
  * @throws DataAccessException
