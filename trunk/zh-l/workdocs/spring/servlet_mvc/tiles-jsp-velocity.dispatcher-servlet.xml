@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+ 		http://www.springframework.org/schema/txz
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<mvc:annotation-driven />
+	<context:component-scan base-package="com.std.web" />
+	<aop:aspectj-autoproxy />
+	<!-- proxy-target-class默认"false",更改为"ture"使用CGLib动态代理 -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+	<bean id="templateInitializer" class="org.apache.tiles.extras.complete.CompleteAutoloadTilesInitializer" />
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="tilesInitializer" ref="templateInitializer" />
+		<property name="definitions" value="/WEB-INF/tiles-defs.xml"/>
+	</bean>
+	<bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+	</bean>
+
+	<bean id="velocityConfigurer" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+		<!--
+			定义了资源的根路径，也是Controller返回时View名的相对根路径 。
+			若就在/WEB-INF/vm/下有hai.vm，则返回时只需要返回字符串hai.vm即可 。
+			若是在/WEB-INF/vm/hello/下，则返回时需要返回"hello/hai.vm"
+		-->
+		<property name="resourceLoaderPath" value="/WEB-INF/vm/" />
+		<property name="velocityProperties">
+			<props>
+				<prop key="input.encoding">UTF-8</prop>
+				<prop key="output.encoding">UTF-8</prop>
+				<prop key="contentType">text/html;charset=UTF-8</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="velocityViewResolver"
+		class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+		<property name="exposeSpringMacroHelpers" value="true" />
+		<!--
+			exposeRequestAttributes,exposeSessionAttributes 两个值的设置为true，
+			则可以在Web应用页面上使用request,session变量
+		-->
+		<property name="exposeSessionAttributes" value="true" />
+		<property name="exposeRequestAttributes" value="true" />
+
+		<!--
+			设置Web页面用的HttpServletRequest的别名
+		 -->
+		<property name="requestContextAttribute" value="rc" />
+
+		<property name="contentType" value="text/html;charset=UTF-8" />
+		<property name="attributesMap">
+			<map>
+				<!--Velocity Escape Tool -->
+				<entry key="esc">
+					<bean class="org.apache.velocity.tools.generic.EscapeTool" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="jspViewResolver"	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"	value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+</beans>
