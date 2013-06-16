@@ -8,6 +8,6 @@ public class AboutController {
 
     @RequestMapping("/about.htm")
     public String redirect() {
-        return "about";
+        return "kacha/about.vm";
     }
 }

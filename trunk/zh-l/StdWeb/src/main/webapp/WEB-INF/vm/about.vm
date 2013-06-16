@@ -6,5 +6,7 @@
 </head>
 <body>
 About the author.
+$rc.contextPath
+$request.contextPath
 </body>
 </html>
