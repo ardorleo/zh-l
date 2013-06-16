@@ -1,2 +1,13 @@
-$msg
-$!request.contextPath
+\$msg=$msg<br/>
+\$request.contextPath=$!request.contextPath $request
+#if($flag=="7")
+	<br>hello,kitty!
+#end
+<br/>
+\$rc=$rc.contextPath
+<br>
+$request<br>
+$rc<br>
+#if($test=="test")
+	test
+#end
