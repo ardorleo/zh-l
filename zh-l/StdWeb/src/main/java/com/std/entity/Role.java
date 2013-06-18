@@ -1,6 +1,5 @@
 package com.std.entity;
 
-import java.beans.Transient;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
@@ -16,40 +15,39 @@ import com.google.common.collect.ImmutableList;
 
 public class Role extends IdEntity {
 
-	private String name;
+    private String name;
 
-	private String permissions;
+    private String permissions;
 
-	public Role() {
-	}
+    public Role() {
+    }
 
-	public Role(Long id) {
-		this.id = id;
-	}
+    public Role(Long id) {
+        this.id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getPermissions() {
-		return permissions;
-	}
+    public String getPermissions() {
+        return permissions;
+    }
 
-	public void setPermissions(String permissions) {
-		this.permissions = permissions;
-	}
+    public void setPermissions(String permissions) {
+        this.permissions = permissions;
+    }
 
-	@Transient
-	public List<String> getPermissionList() {
-		return ImmutableList.copyOf(StringUtils.split(permissions, ","));
-	}
+    public List<String> getPermissionList() {
+        return ImmutableList.copyOf(StringUtils.split(permissions, ","));
+    }
 
-	@Override
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this);
-	}
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
+    }
 }
